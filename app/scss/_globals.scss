@@ -17,6 +17,10 @@ body {
   padding: 0;
   font-family: 'Public Sans', sans-serif;
   font-size: variables.$font-med;
+
+  &.noscroll {
+    overflow: hidden;
+  }
 }
 
 a,
@@ -25,7 +29,13 @@ a:hover {
   text-decoration: none;
 }
 
-//Flexbox
+// Spacing
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+// Flexbox
 .flex {
   display: flex;
 
