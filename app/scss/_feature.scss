@@ -1,0 +1,53 @@
+@use 'variables';
+@use 'mixins';
+
+.feature {
+  text-align: center;
+
+  h2 {
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.35rem;
+    letter-spacing: -0.57px;
+    margin-bottom: 0.875rem;
+  }
+
+  p {
+    color: variables.$grayishBlue;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
+    letter-spacing: -0.23px;
+    margin: 0 0 3.5rem 0;
+  }
+
+  &__flexbox {
+    @include mixins.breakpoint-up(large) {
+      display: flex;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin: 0 0 2rem 0;
+    }
+
+    @include mixins.breakpoint-up(large) {
+      flex: 1;
+      &:not(:last-child) {
+        margin: 0 1.875rem 0 0;
+      }
+    }
+  }
+
+  &__icon {
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+  }
+}

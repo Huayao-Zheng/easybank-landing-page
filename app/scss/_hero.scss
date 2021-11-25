@@ -1,28 +1,79 @@
 @use 'variables';
+@use 'mixins';
 
 .hero {
+  @include mixins.breakpoint-up(large) {
+    display: flex;
+  }
+
   &__image {
     position: relative;
     background-image: url(/images/bg-intro-mobile.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center bottom 55%;
+    background-position: center center;
     min-height: 17.625rem;
 
+    @include mixins.breakpoint-up(medium) {
+      min-height: 25rem;
+      background-position: center 60%;
+    }
+
+    @include mixins.breakpoint-up(large) {
+      flex: 3;
+      order: 2;
+      height: 41rem;
+      background-image: none;
+    }
+
     &::before {
-      position: absolute;
+      @include mixins.breakpoint-up(large) {
+        content: '';
+        position: absolute;
+        height: 100%;
+        background-image: url('/images/bg-intro-desktop.svg');
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        width: 150%;
+        background-size: 122%;
+        background-position: 0% 83%;
+      }
+    }
+
+    &::after {
       content: '';
+      position: absolute;
       width: 100%;
       height: 100%;
-      background-image: url(/images/image-mockups.png);
-      background-size: 91.5%;
+      background-image: url('/images/image-mockups.png');
+      background-size: 93%;
       background-repeat: no-repeat;
-      background-position: center bottom 12%;
+      background-position: center bottom;
+
+      @include mixins.breakpoint-up(medium) {
+        background-size: 52%;
+      }
+
+      @include mixins.breakpoint-up(large) {
+        width: 120%;
+        height: 122%;
+        background-size: 94%;
+        background-position: center 150%;
+        left: 22%;
+      }
     }
   }
 
   &__text {
     text-align: center;
+
+    @include mixins.breakpoint-up(large) {
+      flex: 1;
+      order: 1;
+      text-align: left;
+      width: 27.9375rem;
+      padding: 10.625rem 0;
+    }
 
     h1 {
       font-weight: 300;
@@ -32,9 +83,25 @@
       color: variables.$darkBlue;
       margin-top: 2.5625rem;
       margin-bottom: 1rem;
+
+      @include mixins.breakpoint-up(large) {
+        font-size: variables.$font-xlg;
+        line-height: 4rem;
+        letter-spacing: -1px;
+        margin: 0 0 1.5rem 0;
+        width: 25.125rem;
+      }
     }
 
     p {
+      color: variables.$grayishBlue;
+
+      @include mixins.breakpoint-up(large) {
+        line-height: 1.75rem;
+        letter-spacing: -0.28125px;
+        margin-bottom: 2.25rem;
+        width: 27.9375rem;
+      }
     }
   }
 }

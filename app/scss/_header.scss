@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'mixins';
 
 .header {
   position: relative;
@@ -20,10 +21,10 @@
   }
 
   nav {
-    max-width: 69.375rem;
-    margin: 0 auto;
-    padding-top: 1.125rem;
-    padding-bottom: 1.125rem;
+    @include mixins.breakpoint-up(large) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   //Mobile Menu Toggle
@@ -34,10 +35,10 @@
       height: 2px;
       background-color: variables.$darkBlue;
       transition: all 200ms ease-in-out;
-      transform-origin: 3.5px 1px;
+      transform-origin: 2px 1.5px;
 
       &:not(:last-child) {
-        margin-bottom: 4px;
+        margin-bottom: 5px;
       }
     }
   }
@@ -91,23 +92,12 @@
       }
     }
   }
-
-  &__cta {
-    font-size: variables.$font-sm;
-    font-weight: 700;
-    line-height: 1.75rem;
-    transition: opacity 200ms ease-in-out;
-
-    &:hover {
-      opacity: 0.4;
-    }
-  }
 }
 
 .overlay {
   opacity: 0;
   position: fixed;
-  top: 3.75rem;
+  top: 6rem;
   right: 0;
   bottom: 0;
   left: 0;
