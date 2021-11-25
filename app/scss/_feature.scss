@@ -1,8 +1,18 @@
 @use 'variables';
 @use 'mixins';
+@use 'functions' as *;
 
 .feature {
   text-align: center;
+  color: variables.$darkBlue;
+  background-color: variables.$lightGrayishBlue;
+  width: 100%;
+  padding: 0 rem(24);
+  @include mixins.breakpoint-up(large) {
+    text-align: left;
+    font-size: 2.5rem;
+    padding: rem(96) rem(165);
+  }
 
   h2 {
     font-weight: 300;
@@ -10,15 +20,22 @@
     line-height: 2.35rem;
     letter-spacing: -0.57px;
     margin-bottom: 0.875rem;
+    @include mixins.breakpoint-up(large) {
+      font-size: rem(40);
+      line-height: rem(64);
+      letter-spacing: rem(-0.714286);
+      margin-bottom: rem(16);
+    }
   }
 
-  p {
-    color: variables.$grayishBlue;
-    font-weight: 400;
-    font-size: 0.9375rem;
-    line-height: 1.5625rem;
-    letter-spacing: -0.23px;
-    margin: 0 0 3.5rem 0;
+  > p {
+    @include mixins.breakpoint-up(large) {
+      font-size: rem(18);
+      line-height: rem(28);
+      letter-spacing: rem(-0.28);
+      max-width: rem(635);
+      margin-bottom: rem(72);
+    }
   }
 
   &__flexbox {
@@ -42,12 +59,32 @@
 
   &__icon {
     margin-bottom: 1.5rem;
+    @include mixins.breakpoint-up(large) {
+      max-height: rem(72);
+      margin-bottom: rem(40);
+    }
   }
 
   &__title {
+    font-size: 1.25rem;
+    font-weight: 300;
     margin-bottom: 1rem;
+    line-height: 1.75rem;
+    letter-spacing: -0.357143px;
+    @include mixins.breakpoint-up(large) {
+      font-size: rem(24);
+      line-height: rem(28);
+      letter-spacing: rem(0.43);
+      margin-bottom: rem(26);
+    }
   }
 
   &__description {
+    margin: 0;
+    @include mixins.breakpoint-up(large) {
+      font-size: rem(16);
+      line-height: rem(26);
+      letter-spacing: rem(-0.25);
+    }
   }
 }

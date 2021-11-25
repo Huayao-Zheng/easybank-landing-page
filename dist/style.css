@@ -89,6 +89,15 @@ h3 {
   margin-top: 0;
 }
 
+p {
+  color: #9698a6;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+  letter-spacing: -0.23px;
+  margin: 0 0 3.5rem 0;
+}
+
 .container {
   max-width: 69.375rem;
   margin: 0 auto;
@@ -377,6 +386,17 @@ button:hover,
 
 .feature {
   text-align: center;
+  color: #2d314d;
+  background-color: #f3f4f6;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+@media (min-width: 64em) {
+  .feature {
+    text-align: left;
+    font-size: 2.5rem;
+    padding: 6rem 10.3125rem;
+  }
 }
 .feature h2 {
   font-weight: 300;
@@ -385,13 +405,22 @@ button:hover,
   letter-spacing: -0.57px;
   margin-bottom: 0.875rem;
 }
-.feature p {
-  color: #9698a6;
-  font-weight: 400;
-  font-size: 0.9375rem;
-  line-height: 1.5625rem;
-  letter-spacing: -0.23px;
-  margin: 0 0 3.5rem 0;
+@media (min-width: 64em) {
+  .feature h2 {
+    font-size: 2.5rem;
+    line-height: 4rem;
+    letter-spacing: -0.044642875rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 64em) {
+  .feature > p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    letter-spacing: -0.0175rem;
+    max-width: 39.6875rem;
+    margin-bottom: 4.5rem;
+  }
 }
 @media (min-width: 64em) {
   .feature__flexbox {
@@ -416,6 +445,34 @@ button:hover,
 .feature__icon {
   margin-bottom: 1.5rem;
 }
+@media (min-width: 64em) {
+  .feature__icon {
+    max-height: 4.5rem;
+    margin-bottom: 2.5rem;
+  }
+}
 .feature__title {
+  font-size: 1.25rem;
+  font-weight: 300;
   margin-bottom: 1rem;
+  line-height: 1.75rem;
+  letter-spacing: -0.357143px;
+}
+@media (min-width: 64em) {
+  .feature__title {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    letter-spacing: 0.026875rem;
+    margin-bottom: 1.625rem;
+  }
+}
+.feature__description {
+  margin: 0;
+}
+@media (min-width: 64em) {
+  .feature__description {
+    font-size: 1rem;
+    line-height: 1.625rem;
+    letter-spacing: -0.015625rem;
+  }
 }/*# sourceMappingURL=style.css.map */
